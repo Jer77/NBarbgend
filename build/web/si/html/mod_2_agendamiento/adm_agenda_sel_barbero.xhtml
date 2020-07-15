@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<meta charset="UTF-8"></meta>
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+	<title>Agendamiento</title>
+	<h:outputStylesheet name="css/jsfcrud.css"></h:outputStylesheet>
+	<link rel="stylesheet"
+		jsf:name="css/mod_2_agendamiento/estilos_agenda_sel_barbero.css"></link>
+	<link rel="stylesheet" jsf:name="bootstrap/css/bootstrap.min.css"></link>
+	<link rel="shortcut icon"
+		jsf:name="resources/css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+</h:head>
+<h:body>
+	<div class="content">
+		<header class="row"> <!-- Columna de Breadcrum -->
+		<div class="borde col">
+			<ul class="breadcrumb">
+				<li><a jsf:outcome="test/test.xhtml">Home</a></li>
+				<li><a jsf:outcome="test/test.xhtml">Agenda</a></li>
+				<li><a jsf:outcome="test/test.xhtml">Seleccionar Servicio</a></li>
+				<li><a jsf:outcome="test/test.xhtml">Seleccionar Barbero</a></li>
+			</ul>
+		</div>
+		<!-- Columna área de notificación -->
+		<div class="borde col">
+			<ul class="notification">
+				<li><h:graphicImage	value="../../../resources/css/img/Elements/list.jpg" /></li>
+				<li><h:graphicImage value="../../../resources/css/img/Elements/notificacion.png" /></li>
+				<li><h:graphicImage	value="../../../resources/css/img/Elements/mensaje.png" /></li>
+				<li>Administrador</li>
+			</ul>
+		</div>
+		</header>
+		<div class="row">
+			<div class="col">
+				<h1>Seleccionar Barbero</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="inputform col">
+				<h:form>
+					<div class="col_int">
+						<h:outputLabel value="Barberos" />
+					</div>
+					<h:selectOneMenu value="#{TblUsuario.metodoCrearUsuario}">
+						<f:selectItem itemValue="barbero1" itemLabel="" />
+						<f:selectItem itemValue="barbero2" itemLabel="" />
+						<f:selectItem itemValue="barbero3" itemLabel="" />
+					</h:selectOneMenu>
+					<div class="row">
+						<div class="barbero col">
+							<h3>Camilo Ramírez</h3>
+							<h:graphicImage value="../../../resources/css/img/Servicios/barbero_1.png" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="score col col-lg-12">
+							<h:graphicImage	value="../../../resources/css/img/Elements/5stars.png" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col col-lg-12">
+							<p>Servicio simplemente excepcional, desde su atención, hasta los implementos usados, </p>
+							<p>lo mejor es que no te hace sentir como un cliente más, </p>
+							<p>sino como un conocido de toda la vida. Recomendado al 100%.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<h:commandButton action="#{TblUsuario.metodoVuelveLanding}" value="Agrega Productos" styleClass="btn"></h:commandButton>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<h:commandButton actionListener="#{TblUsuario.metodoVuelveLanding}" value="Elige Fecha" styleClass="btn"></h:commandButton>
+						</div>
+					</div>
+				</h:form>
+			</div>
+		</div>
+		<footer class="footer row">
+		<div class="col">
+			<h:graphicImage
+				value="../../../resources/css/img/Logo/Barbgend_logo.png" />
+			<p class="text_right">© 2019 - GAES 3 ADSI 2021 - SENA CSF
+				Regional Distrito Capital - Todos los derechos reservados.</p>
+		</div>
+		</footer>
+	</div>
+</h:body>
+</html>

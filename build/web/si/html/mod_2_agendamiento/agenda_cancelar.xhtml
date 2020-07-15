@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <title>Cancelar Cita</title>
+    <h:outputStylesheet name="css/jsfcrud.css"></h:outputStylesheet>
+    <link rel="stylesheet" jsf:name="css/mod_2_agendamiento/estilos_agenda_cancelar.css"></link>
+    <link rel="stylesheet" jsf:name="bootstrap/css/bootstrap.min.css"></link>
+    <link rel="shortcut icon" jsf:name="resources/css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+</h:head>
+<h:body>
+	<div class="content">
+		<header class="row">
+			<!-- Columna de Breadcrum -->
+			<div class="borde col">
+				<ul class="breadcrumb col-lg-9">
+					<li><a jsf:outcome="test/test.xhtml">Home</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Modificación de Cita</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Cancelar Cita</a></li>
+				</ul>
+			</div>
+			<!-- Columna área de notificación -->
+			<div class="borde col col-lg-3">
+				<ul class="notification">
+					<li><h:graphicImage value="../../../resources/css/img/Elements/list.jpg"/></li>
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/notificacion.png"/></li>
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/mensaje.png"/></li>
+					<li>Cliente</li>
+				</ul>
+			</div>
+		</header>
+		<div class="row">
+			<div class="col">
+				<h1>Cancelar Cita</h1>
+			</div>
+		</div>
+		<div class="content" align = "center">
+			<div class="col_int">
+				<h:form>
+					<div class="col_int">
+						<h:outputLabel value="Motivo"/>
+					</div>
+					<div class="col_int">
+						<h:selectOneMenu value="#{TblUsuario.metodoCrearUsuario}">
+							<f:selectItem itemValue="personal" itemLabel="Personal"/>
+							<f:selectItem itemValue="tiempo" itemLabel="Tiempo"/>
+							<f:selectItem itemValue="otro" itemLabel="Otro"/>
+						</h:selectOneMenu>
+					</div>
+					<div class="col_int">
+					<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Cancelar Cita" styleClass="btn"></h:commandButton>
+					<h:commandButton action="#{TblUsuario.metodoVuelveLanding}" value="Regresar" styleClass="btn"></h:commandButton>
+					</div>
+				</h:form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="confirm col">
+				<p>¡Lamentamos que tengas que cancelar!</p>
+			</div>
+		</div>
+		<footer class="footer row">
+			<div class="col">
+				<h:graphicImage value="../../../resources/css/img/Logo/Barbgend_logo.png"/>
+				<p class="text_right">© 2019 - GAES 3 ADSI 2021 - SENA CSF Regional Distrito Capital - Todos los derechos reservados.</p>
+			</div>
+		</footer>
+	</div>
+	<script>
+		function cancelarCita() {
+			alert("Tu cita se ha cancelado satisfactoriamente.");
+		}
+	</script>
+</h:body>
+</html>

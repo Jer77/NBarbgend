@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+ <h:head>
+ 	<meta charset="UTF-8"></meta>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+ 	<title>Contáctanos</title>
+ 	<h:outputStylesheet name="css/jsfcrud.css"></h:outputStylesheet>
+ 	<link rel="stylesheet" jsf:name="css/formularios/estilos_contactanos.css"></link>
+ 	<link rel="stylesheet" jsf:name="bootstrap/css/bootstrap.min.css"></link>
+ 	<link rel="shortcut icon" jsf:name="resources/css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+ </h:head>
+ <h:body>
+ 	<div class="content">
+ 		<header class="row">
+ 			<!-- Columna de Breadcrum -->
+ 			<div class="borde col">
+ 				<ul class="breadcrumb">
+ 					<li><a href="../mod_1_usuarios/client_home.html">Home</a></li>
+ 					<li><a href="catalogo_barberos.html">Contáctanos</a></li>
+ 				</ul>
+ 			</div>
+ 			<!-- Columna área de notificación -->
+ 			<div class="borde col">
+ 				<ul class="notification">
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/list.jpg"/></li>
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/notificacion.png"/></li>
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/mensaje.png"/></li>
+ 					<li>Cliente</li>
+ 				</ul>
+ 			</div>
+ 		</header>
+ 		<div class="row">
+ 			<!-- Título -->
+ 			<div class="col">
+ 				<h1>Contáctanos</h1>
+ 			</div>
+ 		</div>
+ 		<!-- Contenedor Información Dirección y teléfono -->
+ 		<div class="row">
+ 			<div class="datos col col-lg-3">
+ 				<p class="bold">Celebrity Barber Shop Centro Comercial Andino Carrera 11#71, Bogotá D.C.</p>
+ 				<p class="bold">Correo electrónico: ceo@celebritybs.co</p>
+ 				<p class="bold">Medellín: (034) 322 4316 Bogotá: (031) 746 7261</p>
+ 				<!-- Iconos de Redes sociales -->
+ 				<h:graphicImage class="img_redes" value="../../../resources/css/img/Elements/fb_white.png" onclick="location.href='https://www.facebook.com/Celebritybarbershop1/'"/>
+ 				<h:graphicImage class="img_redes" value="../../../resources/css/img/Elements/instagram.png" onclick="location.href='https://www.instagram.com/celebritybarbershop/'"/>
+ 			</div>
+ 		</div>
+		<!-- Contenedor formulario -->
+ 		<div class="row">
+ 			<div class="col">
+ 				<h:form>
+ 					<div class="inputform">
+ 						<h:inputText type="text" name="nombre" value="Acá van tus nombres"/>
+ 					</div>
+ 					<div class="inputform">
+ 						<h:inputText type="tel" name="telefono" value="Tu teléfono"/>
+ 					</div>
+ 					<div class="inputform">
+ 						<h:inputText type="mail" name="email" value="Tu correo electrónico"/>
+ 					</div>
+ 					<div class="inputform">
+ 						<h:inputText type="text" name="asunto" value="Asunto"/>
+ 					</div>
+ 					<div class="inputform">
+ 						<h:inputTextarea value="Escribenos acá tu mensaje..."/>
+ 					</div>
+ 					<div class="col">
+ 						<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Enviar" styleClass="btn"></h:commandButton>
+ 					</div>
+ 				</h:form>
+ 			</div>
+ 		</div>
+ 		<!-- Botón de regresar a home -->
+ 		<div class="row">
+ 			<div class="col">
+ 				<h:commandButton action="#{TblUsuario.metodoCrearUsuario}" value="Home" styleClass="btn"></h:commandButton>
+ 			</div>
+ 		</div>
+ 		<!-- Conenetdor información Barbgend -->
+ 		<div class="datos col col-lg-3">
+ 			<div class="col">
+ 				<p class="bold">Contacto Desarrollo de Barbgend</p>
+ 				<p class="bold">311 525 2627 - 319 305 9851</p>
+ 			</div>
+ 		</div>
+ 		<footer class="footer row">
+ 			<div class="col">
+ 				<h:graphicImage value="../../../resources/css/img/Logo/Barbgend_logo.png" />
+ 				<p class="text_right">© 2019 - GAES 3 ADSI 2021 - SENA CSF Regional Distrito Capital - Todos los derechos reservados.</p>
+ 			</div>
+ 		</footer>
+ 	</div>
+ </h:body>
+ </html>

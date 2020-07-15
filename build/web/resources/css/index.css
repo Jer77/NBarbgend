@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap");
+
+/*Contenedores*/
+html, body{
+	height: 100vh;
+	margin:0;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	box-sizing: border-box;
+}
+
+.container-fluid{
+	padding: 0 !important;
+}
+
+header{
+	background: #000000;
+	box-sizing: border-box;
+}
+
+main{
+	background: #000000 !important;
+	box-sizing: border-box;
+}
+
+body > div > content > div:nth-child(1), body > div > content > div:nth-child(2), body > div > content > div:nth-child(3){
+	background: #c0c0c0 !important;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+content{
+	background: #7d8084 !important;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+footer{
+	margin: 0 !important;
+	background: #000000;
+	box-sizing: border-box;
+}
+
+/*Títulos*/
+h1{
+	text-align: center;
+	margin: 0 !important;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	color: white;
+}
+
+h2{
+	text-align: center;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	color: white;
+	padding-left: 10px;
+	padding-right: 10px;
+        margin: 0px;
+}
+
+h3{
+	text-align: left;
+	margin-bottom: .5rem !important;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	color: white;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+h6 {
+	text-align: center;
+	font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+	font-size: 10pt;
+	color: #000000;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/*Parrafos*/
+p{
+	text-align: left;
+	font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+	color: #FFFFFF;
+	font-size: 10pt;
+	padding-left: 10px;
+	padding-right: 10px;
+        margin: 0;
+}
+
+/*Parrafos alineados a la derecha Copyright*/
+.text_right{
+	text-align: right;
+	color: #FFFFFF;
+	font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+	margin: 0 !important;
+	font-size: 12pt;
+}
+
+/*Iframe*/
+
+iframe {
+	height: 20vh;
+	width: 100%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+figure {
+	margin: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    }
+
+.img-fluid{
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/*Imagen bandera alineado a la derecha*/
+.img_icon{
+	width: 30px;
+	height: 15px;
+	margin: 5px;
+	float: right;
+	cursor: pointer;
+}
+
+/*Imagenes logos redes sociales*/
+.img-redes{
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+
+/*Botones*/
+.btn{
+	display: inline-block;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: none !important;
+	border-radius: 5px !important;
+	width: 30%;
+	font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+	background-color: #000000 !important;
+	font-size: 12pt !important;
+	color: #C0C0C0 !important;
+        text-decoration: none;
+}
+
+.btn:hover,.btn:focus,.btn:active {
+	outline: none !important;
+	box-shadow: none !important;
+	background-color: #8A9597 !important;
+	color: #000000 !important;
+        text-decoration: none;
+}

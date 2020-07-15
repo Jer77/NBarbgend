@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTblUsuarioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_usuIdUsuario}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.usuIdUsuario}" title="#{bundle.ViewTblUsuarioTitle_usuIdUsuario}"/>
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_usuPrimerNombre}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.usuPrimerNombre}" title="#{bundle.ViewTblUsuarioTitle_usuPrimerNombre}"/>
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_usuSegundoNombre}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.usuSegundoNombre}" title="#{bundle.ViewTblUsuarioTitle_usuSegundoNombre}"/>
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_usuPrimerApellido}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.usuPrimerApellido}" title="#{bundle.ViewTblUsuarioTitle_usuPrimerApellido}"/>
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_usuSegundoApellido}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.usuSegundoApellido}" title="#{bundle.ViewTblUsuarioTitle_usuSegundoApellido}"/>
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_usuPassword}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.usuPassword}" title="#{bundle.ViewTblUsuarioTitle_usuPassword}"/>
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_usuEmail}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.usuEmail}" title="#{bundle.ViewTblUsuarioTitle_usuEmail}"/>
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_usuFechaNacimiento}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.usuFechaNacimiento}" title="#{bundle.ViewTblUsuarioTitle_usuFechaNacimiento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_usuTelefonoFijo}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.usuTelefonoFijo}" title="#{bundle.ViewTblUsuarioTitle_usuTelefonoFijo}"/>
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_usuTelefonoMovil}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.usuTelefonoMovil}" title="#{bundle.ViewTblUsuarioTitle_usuTelefonoMovil}"/>
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_usuNumeroDocumento}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.usuNumeroDocumento}" title="#{bundle.ViewTblUsuarioTitle_usuNumeroDocumento}"/>
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_usuStatus}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.usuStatus}" title="#{bundle.ViewTblUsuarioTitle_usuStatus}"/>
+                    <h:outputText value="#{bundle.ViewTblUsuarioLabel_tblUsorol}"/>
+                    <h:outputText value="#{tblUsuarioController.selected.tblUsorol}" title="#{bundle.ViewTblUsuarioTitle_tblUsorol}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tblUsuarioController.destroyAndView}" value="#{bundle.ViewTblUsuarioDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewTblUsuarioEditLink}"/>
+                <br />
+                <h:commandLink action="#{tblUsuarioController.prepareCreate}" value="#{bundle.ViewTblUsuarioCreateLink}" />
+                <br />
+                <h:commandLink action="#{tblUsuarioController.prepareList}" value="#{bundle.ViewTblUsuarioShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewTblUsuarioIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

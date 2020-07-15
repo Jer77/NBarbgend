@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap");
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/*Contenedores*/
+html, body{
+  height:100vh;
+  margin:0;
+  display: flex;
+  flex-direction: column;
+}
+
+.row{
+	background: #D9D2C5;
+	margin: 0 !important;
+	height: 100%;
+}
+
+.col{
+	background: #D9D2C5;
+	text-align: center;
+	height: 100%;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.int{
+	padding: 0 !important;
+}
+
+.ext{
+	padding: 0 !important;
+}
+
+footer{
+	width: 100%;
+	height: 100%;
+	margin: 0 !important;
+	background: #D9D2C5;
+}
+
+/*Tamaño de Imagen*/
+img{
+	width: 275px;
+	height: 375px;
+}
+
+/*Parrafos*/
+p{
+	text-align: left;
+	font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+}
+
+/*Parrafos alineados a la derecha Copyright*/
+p.text_right{
+	text-align: right;
+	color: #594C3B;
+	font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+	margin-bottom: 0px;
+}
+
+/*Fuente de inputs*/
+input{
+	font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+	text-align:center;
+	border: 1px solid #594C3B;
+}
+
+/*Fuente Links*/
+a{
+	text-decoration: none;
+	font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+}
+
+a:link {
+	color: #594C3B;
+	font-size: 12pt;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #736A5F;
+	font-size: 12pt;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #594C3B;
+	font-size: 12pt;
+	text-decoration: none;
+}
+
+/*Links-Botones temporal*/
+.abutton{
+	text-align: center;
+	display: inline-block;
+	font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+	width: 80px;
+	height: 40px;
+	padding: 9px;
+	background: #D5B387;
+	text-decoration: none;
+	color: #594C3B;
+	border-radius: 10px;
+	font-size: 12pt;
+}
+
+.abutton:hover {
+	color: #D9D2C5;
+	font-size: 12pt;
+	text-decoration: none;
+	background-color: #736A5F;
+}

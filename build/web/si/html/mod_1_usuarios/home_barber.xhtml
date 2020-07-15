@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+<h:head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <title>Home Barbero</title>
+    <h:outputStylesheet name="css/jsfcrud.css"></h:outputStylesheet>
+    <link rel="stylesheet" jsf:name="css/mod_1_usuarios/estilos_home_barber.css"></link>
+    <link rel="stylesheet" jsf:name="bootstrap/css/bootstrap.min.css"></link>
+    <link rel="shortcut icon" jsf:name="resources/css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+</h:head>
+<h:body>
+	<!-- Contenedor Main -->
+	<div class="main">
+		<div class="vertical-menu">
+			<!-- Links de cada opción dependiendo de usuario -->
+			<a href="barber_home.html" target="principal_area_barber">Home</a>
+			<a href="barb_consultar_agenda.html" target="principal_area_barber">Consultar Agenda</a>
+			<a href="barb_gestion_catalogo.html" target="principal_area_barber">Gestionar Catálogo</a>
+			<a href="../mod_4_reportes/barb_reportes.html" target="principal_area_barber">Reportes</a>
+			<a href="../../../index.html">Cerrar Sesión</a>
+		</div>
+		<!-- Contenedor Content -->
+		<div class="content">
+			<!-- Iframe donde aparece la opción elegida por defecfo barber_home.html-->
+			<iframe name="principal_area_barber" src="barber_home.html"></iframe>
+		</div>
+	</div>
+</h:body>
+</html>

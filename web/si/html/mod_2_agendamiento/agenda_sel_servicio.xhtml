@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <title>Agendamiento</title>
+    <h:outputStylesheet name="css/jsfcrud.css"></h:outputStylesheet>
+    <link rel="stylesheet" jsf:name="css/mod_2_agendamiento/estilos_agenda_sel_servicio.css"></link>
+    <link rel="stylesheet" jsf:name="bootstrap/css/bootstrap.min.css"></link>
+    <link rel="shortcut icon" jsf:name="resources/css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+</h:head>
+<h:body>
+	<div class="content">
+		<header class="row">
+			<!-- Columna de Breadcrum -->
+			<div class="borde col">
+				<ul class="breadcrumb">
+					<li><a jsf:outcome="test/test.xhtml">Home</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Agenda</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Seleccionar Servicio</a></li>
+				</ul>
+			</div>
+			<!-- Columna área de notificación -->
+			<div class="borde col">
+				<ul class="notification">
+					<li><h:graphicImage value="../../../resources/css/img/Elements/list.jpg"/></li>
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/notificacion.png"/></li>
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/mensaje.png"/></li>
+					<li>Cliente</li>
+				</ul>
+			</div>
+		</header>
+		<div class="row">
+			<div class="col">
+				<h1>Seleccionar Servicio</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="inputform col">
+				<h:form>
+					<div class="col_int">
+						<h:outputLabel value="Servicio"/>
+					</div>
+					<div class="col_int">
+						<h:selectOneMenu value="#{TblUsuario.metodoCrearUsuario}">
+							<f:selectItem itemValue="servicio1" itemLabel=""/>
+							<f:selectItem itemValue="servicio2" itemLabel=""/>
+							<f:selectItem itemValue="servicio3" itemLabel=""/>
+						</h:selectOneMenu>
+					</div>
+					<div class="row">
+						<div class="col">
+							<h3>Corte</h3>
+							<p>Se crea un efecto de "desvanecimiento" donde el cabello inicia corto en la parte inferior de la cabeza y va creciendo</p>
+							<p>a medida que asciende sin notarse líneas o sombras. Obtén un aspecto moderno y conquista con este tipo de cortes.</p>
+							<p>No olvides dar tu toque personal a cada corte que te realices, nuestros Barberos están abiertos a opiniones y nuevas ideas.</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="servicio col">
+							<h:graphicImage value="../../../resources/css/img/Servicios/agendamiento-corte.jpg"/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Elige Barbero" styleClass="btn"></h:commandButton>
+						</div>
+					</div>
+				</h:form>
+			</div>
+		</div>
+		<footer class="footer row">
+			<div class="col">
+				<h:graphicImage value="../../../resources/css/img/Logo/Barbgend_logo.png"/>
+				<p class="text_right">© 2019 - GAES 3 ADSI 2021 - SENA CSF Regional Distrito Capital - Todos los derechos reservados.</p>
+			</div>
+		</footer>
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+<h:head>
+	<meta charset="UTF-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+	<title>Gestión de servicios</title>
+	<h:outputStylesheet name="css/jsfcrud.css"></h:outputStylesheet>
+	<link rel="stylesheet" jsf:name="css/mod_3_productos_servicios/estilos_adm_gestion_servicios.css"></link>
+	<link rel="stylesheet" jsf:name="bootstrap/css/bootstrap.min.css"></link>
+ 	<link rel="shortcut icon" jsf:name="resources/css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+</h:head>
+<h:body>
+	<div class="content">
+		<header class="row">
+			<!-- Columna de Breadcrum -->
+			<div class="borde col">
+				<ul class="breadcrumb">
+					<li><a href="../mod_1_usuarios/adm_home.html">Home</a></li>
+					<li><a href="adm_gestion_servicios.html">Gestión de Servicios</a></li>
+				</ul>
+			</div>
+			<!-- Columna área de notificación -->
+			<div class="borde col">
+				<ul class="notification">
+					<li><h:graphicImage value="../../../resources/css/img/Elements/list.jpg"/></li>
+					<li><h:graphicImage value="../../../resources/css/img/Elements/notificacion.png"/></li>
+					<li><h:graphicImage value="../../../resources/css/img/Elements/mensaje.png"/></li>
+					<li>Administrador</li>
+				</ul>
+			</div>
+		</header>
+		<div class="row">
+			<div class="col">
+				<h1>Servicios</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="servicio col">
+				<h3>Corte</h3>
+				<h:graphicImage value="../../../resources/css/img/Servicios/agendamiento-corte.jpg"/>
+				<p>Se crea un efecto de "desvanecimiento" donde el cabello inicia corto en la parte inferior de la cabeza y va creciendo a medida que asciende sin notarse líneas o sombras. Obtén un aspecto moderno y conquista con este tipo de cortes.
+				No olvides dar tu toque personal a cada corte que te realices, nuestros Barberos están abiertos a opiniones y nuevas ideas.</p>
+				<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Editar Servicio" styleClass="btn"></h:commandButton>
+				<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Eliminar Servicio" styleClass="btn"></h:commandButton>
+			</div>
+			<div class="servicio col">
+				<h3>Barba</h3>
+				<h:graphicImage value="../../../resources/css/img/Servicios/servicio-barba.jpg"/>
+				<p>Vive la experiencia del arreglo de barba más suave que solo el vapor y el ozono pueden brindar. Acompañado de todo un ritual de barbería clásica que incluye exfoliación, masaje facial, tratamiento para las ojeras y nivelación de la altura de la barba con su respectivo delineado. Finalizando con aplicación de productos para después de afeitado y aceites hidratantes. Toda una experiencia tipo Spa.</p>
+				<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Editar Servicio" styleClass="btn"></h:commandButton>
+				<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Eliminar Servicio" styleClass="btn"></h:commandButton>
+			</div>
+			<div class="servicio col">
+				<h3>Mascarillas</h3>
+				<h:graphicImage value="../../../resources/css/img/Servicios/servicio-mask.jpg"/>
+				<p>Que mejor que complementar tu corte de cabello y arreglo de barba que nuestras mascarillas para la cara de última generación diseñadas especialmente para nosotros y nuestros sistemas novedosos de depilación.  los detalles son los que hacen la diferencia por eso cuidamos mucho de ellos.
+				Contrario a lo que ellas podrían pensar No todos los hombres somos iguales, nosotros lo entendemos y sabemos que cada uno tiene diferentes necesidades.</p>
+				<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Editar Servicio" styleClass="btn"></h:commandButton>
+				<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Eliminar Servicio" styleClass="btn"></h:commandButton>
+			</div>
+			<div class="servicio col">
+				<h3>Corte para Niños</h3>
+				<h:graphicImage value="../../../resources/css/img/Servicios/servicio-kids.jpg"/>
+				<p>En Celebrity Barber Shop los niños son especialmente bienvenidos, nuestra calidez y paciencia son los mejores complementos a los estilos que a los chiquitines les encantan y los colegios requieren. Pregunta por nuestro catalogo de peluqueria para los niños. Todos nuestros procesos son aptos para todas las edades, no olvides reclamar tu #GlobitoCelebrity si eres toda una minicelebridad.</p>
+				<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Editar Servicio" styleClass="btn"></h:commandButton>
+				<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Eliminar Servicio" styleClass="btn"></h:commandButton>
+			</div>
+		</div>
+		<div class="row">
+		</div>
+		<div class="row">
+			<div class="col">
+				<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Agregar Servicio" styleClass="btn"></h:commandButton>
+			</div>
+		</div>
+		<footer class="footer row">
+			<div class="col">
+				<h:graphicImage value="../../../resources/css/img/Logo/Barbgend_logo.png"/>
+				<p class="text_right">© 2019 - GAES 3 ADSI 2021 - SENA CSF Regional Distrito Capital - Todos los derechos reservados.</p>
+			</div>
+		</footer>
+	</div>
+</h:body>
+</html>

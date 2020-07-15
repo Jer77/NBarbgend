@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTblProductoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTblProductoLabel_proIdProducto}" for="proIdProducto" />
+                    <h:inputText id="proIdProducto" value="#{tblProductoController.selected.proIdProducto}" title="#{bundle.EditTblProductoTitle_proIdProducto}" required="true" requiredMessage="#{bundle.EditTblProductoRequiredMessage_proIdProducto}"/>
+                    <h:outputLabel value="#{bundle.EditTblProductoLabel_proNombreProducto}" for="proNombreProducto" />
+                    <h:inputText id="proNombreProducto" value="#{tblProductoController.selected.proNombreProducto}" title="#{bundle.EditTblProductoTitle_proNombreProducto}" required="true" requiredMessage="#{bundle.EditTblProductoRequiredMessage_proNombreProducto}"/>
+                    <h:outputLabel value="#{bundle.EditTblProductoLabel_proPrecioUnitario}" for="proPrecioUnitario" />
+                    <h:inputText id="proPrecioUnitario" value="#{tblProductoController.selected.proPrecioUnitario}" title="#{bundle.EditTblProductoTitle_proPrecioUnitario}" required="true" requiredMessage="#{bundle.EditTblProductoRequiredMessage_proPrecioUnitario}"/>
+                    <h:outputLabel value="#{bundle.EditTblProductoLabel_proDescripcionProducto}" for="proDescripcionProducto" />
+                    <h:inputText id="proDescripcionProducto" value="#{tblProductoController.selected.proDescripcionProducto}" title="#{bundle.EditTblProductoTitle_proDescripcionProducto}" required="true" requiredMessage="#{bundle.EditTblProductoRequiredMessage_proDescripcionProducto}"/>
+                    <h:outputLabel value="#{bundle.EditTblProductoLabel_proPresentacion}" for="proPresentacion" />
+                    <h:inputText id="proPresentacion" value="#{tblProductoController.selected.proPresentacion}" title="#{bundle.EditTblProductoTitle_proPresentacion}" required="true" requiredMessage="#{bundle.EditTblProductoRequiredMessage_proPresentacion}"/>
+                    <h:outputLabel value="#{bundle.EditTblProductoLabel_proIdMarcaFk}" for="proIdMarcaFk" />
+                    <h:selectOneMenu id="proIdMarcaFk" value="#{tblProductoController.selected.proIdMarcaFk}" title="#{bundle.EditTblProductoTitle_proIdMarcaFk}" required="true" requiredMessage="#{bundle.EditTblProductoRequiredMessage_proIdMarcaFk}">
+                        <f:selectItems value="#{tblMarcasController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{tblProductoController.update}" value="#{bundle.EditTblProductoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTblProductoViewLink}"/>
+                <br />
+                <h:commandLink action="#{tblProductoController.prepareList}" value="#{bundle.EditTblProductoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTblProductoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

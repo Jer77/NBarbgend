@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTblUsuarioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_usuIdUsuario}" for="usuIdUsuario" />
+                    <h:inputText id="usuIdUsuario" value="#{tblUsuarioController.selected.usuIdUsuario}" title="#{bundle.EditTblUsuarioTitle_usuIdUsuario}" required="true" requiredMessage="#{bundle.EditTblUsuarioRequiredMessage_usuIdUsuario}"/>
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_usuPrimerNombre}" for="usuPrimerNombre" />
+                    <h:inputText id="usuPrimerNombre" value="#{tblUsuarioController.selected.usuPrimerNombre}" title="#{bundle.EditTblUsuarioTitle_usuPrimerNombre}" required="true" requiredMessage="#{bundle.EditTblUsuarioRequiredMessage_usuPrimerNombre}"/>
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_usuSegundoNombre}" for="usuSegundoNombre" />
+                    <h:inputText id="usuSegundoNombre" value="#{tblUsuarioController.selected.usuSegundoNombre}" title="#{bundle.EditTblUsuarioTitle_usuSegundoNombre}" />
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_usuPrimerApellido}" for="usuPrimerApellido" />
+                    <h:inputText id="usuPrimerApellido" value="#{tblUsuarioController.selected.usuPrimerApellido}" title="#{bundle.EditTblUsuarioTitle_usuPrimerApellido}" required="true" requiredMessage="#{bundle.EditTblUsuarioRequiredMessage_usuPrimerApellido}"/>
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_usuSegundoApellido}" for="usuSegundoApellido" />
+                    <h:inputText id="usuSegundoApellido" value="#{tblUsuarioController.selected.usuSegundoApellido}" title="#{bundle.EditTblUsuarioTitle_usuSegundoApellido}" />
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_usuPassword}" for="usuPassword" />
+                    <h:inputText id="usuPassword" value="#{tblUsuarioController.selected.usuPassword}" title="#{bundle.EditTblUsuarioTitle_usuPassword}" required="true" requiredMessage="#{bundle.EditTblUsuarioRequiredMessage_usuPassword}"/>
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_usuEmail}" for="usuEmail" />
+                    <h:inputText id="usuEmail" value="#{tblUsuarioController.selected.usuEmail}" title="#{bundle.EditTblUsuarioTitle_usuEmail}" required="true" requiredMessage="#{bundle.EditTblUsuarioRequiredMessage_usuEmail}"/>
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_usuFechaNacimiento}" for="usuFechaNacimiento" />
+                    <h:inputText id="usuFechaNacimiento" value="#{tblUsuarioController.selected.usuFechaNacimiento}" title="#{bundle.EditTblUsuarioTitle_usuFechaNacimiento}" required="true" requiredMessage="#{bundle.EditTblUsuarioRequiredMessage_usuFechaNacimiento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_usuTelefonoFijo}" for="usuTelefonoFijo" />
+                    <h:inputText id="usuTelefonoFijo" value="#{tblUsuarioController.selected.usuTelefonoFijo}" title="#{bundle.EditTblUsuarioTitle_usuTelefonoFijo}" />
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_usuTelefonoMovil}" for="usuTelefonoMovil" />
+                    <h:inputText id="usuTelefonoMovil" value="#{tblUsuarioController.selected.usuTelefonoMovil}" title="#{bundle.EditTblUsuarioTitle_usuTelefonoMovil}" />
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_usuNumeroDocumento}" for="usuNumeroDocumento" />
+                    <h:inputText id="usuNumeroDocumento" value="#{tblUsuarioController.selected.usuNumeroDocumento}" title="#{bundle.EditTblUsuarioTitle_usuNumeroDocumento}" required="true" requiredMessage="#{bundle.EditTblUsuarioRequiredMessage_usuNumeroDocumento}"/>
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_usuStatus}" for="usuStatus" />
+                    <h:inputText id="usuStatus" value="#{tblUsuarioController.selected.usuStatus}" title="#{bundle.EditTblUsuarioTitle_usuStatus}" required="true" requiredMessage="#{bundle.EditTblUsuarioRequiredMessage_usuStatus}"/>
+                    <h:outputLabel value="#{bundle.EditTblUsuarioLabel_tblUsorol}" for="tblUsorol" />
+                    <h:selectOneMenu id="tblUsorol" value="#{tblUsuarioController.selected.tblUsorol}" title="#{bundle.EditTblUsuarioTitle_tblUsorol}" >
+                        <f:selectItems value="#{tblUsorolController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{tblUsuarioController.update}" value="#{bundle.EditTblUsuarioSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTblUsuarioViewLink}"/>
+                <br />
+                <h:commandLink action="#{tblUsuarioController.prepareList}" value="#{bundle.EditTblUsuarioShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTblUsuarioIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

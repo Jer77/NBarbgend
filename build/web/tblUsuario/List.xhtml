@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListTblUsuarioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListTblUsuarioEmpty}" rendered="#{tblUsuarioController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{tblUsuarioController.items.rowCount > 0}">
+                    <h:outputText value="#{tblUsuarioController.pagination.pageFirstItem + 1}..#{tblUsuarioController.pagination.pageLastItem + 1}/#{tblUsuarioController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{tblUsuarioController.previous}" value="#{bundle.Previous} #{tblUsuarioController.pagination.pageSize}" rendered="#{tblUsuarioController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{tblUsuarioController.next}" value="#{bundle.Next} #{tblUsuarioController.pagination.pageSize}" rendered="#{tblUsuarioController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{tblUsuarioController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_usuIdUsuario}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuIdUsuario}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_usuPrimerNombre}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuPrimerNombre}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_usuSegundoNombre}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuSegundoNombre}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_usuPrimerApellido}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuPrimerApellido}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_usuSegundoApellido}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuSegundoApellido}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_usuPassword}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuPassword}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_usuEmail}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuEmail}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_usuFechaNacimiento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuFechaNacimiento}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_usuTelefonoFijo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuTelefonoFijo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_usuTelefonoMovil}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuTelefonoMovil}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_usuNumeroDocumento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuNumeroDocumento}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_usuStatus}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usuStatus}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsuarioTitle_tblUsorol}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tblUsorol}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{tblUsuarioController.prepareView}" value="#{bundle.ListTblUsuarioViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tblUsuarioController.prepareEdit}" value="#{bundle.ListTblUsuarioEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tblUsuarioController.destroy}" value="#{bundle.ListTblUsuarioDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{tblUsuarioController.prepareCreate}" value="#{bundle.ListTblUsuarioCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListTblUsuarioIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

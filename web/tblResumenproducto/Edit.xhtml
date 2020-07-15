@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTblResumenproductoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTblResumenproductoLabel_tblResumenproductoPK_respIdResumen}" for="tblResumenproductoPK_respIdResumen" />
+                    <h:inputText id="tblResumenproductoPK_respIdResumen" value="#{tblResumenproductoController.selected.tblResumenproductoPK.respIdResumen}" title="#{bundle.EditTblResumenproductoTitle_tblResumenproductoPK_respIdResumen}" required="true" requiredMessage="#{bundle.EditTblResumenproductoRequiredMessage_tblResumenproductoPK_respIdResumen}"/>
+                    <h:outputLabel value="#{bundle.EditTblResumenproductoLabel_respCantidad}" for="respCantidad" />
+                    <h:inputText id="respCantidad" value="#{tblResumenproductoController.selected.respCantidad}" title="#{bundle.EditTblResumenproductoTitle_respCantidad}" required="true" requiredMessage="#{bundle.EditTblResumenproductoRequiredMessage_respCantidad}"/>
+                    <h:outputLabel value="#{bundle.EditTblResumenproductoLabel_respPrecioTotal}" for="respPrecioTotal" />
+                    <h:inputText id="respPrecioTotal" value="#{tblResumenproductoController.selected.respPrecioTotal}" title="#{bundle.EditTblResumenproductoTitle_respPrecioTotal}" required="true" requiredMessage="#{bundle.EditTblResumenproductoRequiredMessage_respPrecioTotal}"/>
+                    <h:outputLabel value="#{bundle.EditTblResumenproductoLabel_respIdClienteFk}" for="respIdClienteFk" />
+                    <h:selectOneMenu id="respIdClienteFk" value="#{tblResumenproductoController.selected.respIdClienteFk}" title="#{bundle.EditTblResumenproductoTitle_respIdClienteFk}" required="true" requiredMessage="#{bundle.EditTblResumenproductoRequiredMessage_respIdClienteFk}">
+                        <f:selectItems value="#{tblUsuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditTblResumenproductoLabel_tblProducto}" for="tblProducto" />
+                    <h:selectOneMenu id="tblProducto" value="#{tblResumenproductoController.selected.tblProducto}" title="#{bundle.EditTblResumenproductoTitle_tblProducto}" required="true" requiredMessage="#{bundle.EditTblResumenproductoRequiredMessage_tblProducto}">
+                        <f:selectItems value="#{tblProductoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{tblResumenproductoController.update}" value="#{bundle.EditTblResumenproductoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTblResumenproductoViewLink}"/>
+                <br />
+                <h:commandLink action="#{tblResumenproductoController.prepareList}" value="#{bundle.EditTblResumenproductoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTblResumenproductoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

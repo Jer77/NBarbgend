@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListTblUsorolTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListTblUsorolEmpty}" rendered="#{tblUsorolController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{tblUsorolController.items.rowCount > 0}">
+                    <h:outputText value="#{tblUsorolController.pagination.pageFirstItem + 1}..#{tblUsorolController.pagination.pageLastItem + 1}/#{tblUsorolController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{tblUsorolController.previous}" value="#{bundle.Previous} #{tblUsorolController.pagination.pageSize}" rendered="#{tblUsorolController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{tblUsorolController.next}" value="#{bundle.Next} #{tblUsorolController.pagination.pageSize}" rendered="#{tblUsorolController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{tblUsorolController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsorolTitle_usrlIdUsuariorol}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usrlIdUsuariorol}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsorolTitle_usrlFechaIngreso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usrlFechaIngreso}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsorolTitle_usrlIdRolFk}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usrlIdRolFk}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblUsorolTitle_tblUsuario}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tblUsuario}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{tblUsorolController.prepareView}" value="#{bundle.ListTblUsorolViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tblUsorolController.prepareEdit}" value="#{bundle.ListTblUsorolEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tblUsorolController.destroy}" value="#{bundle.ListTblUsorolDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{tblUsorolController.prepareCreate}" value="#{bundle.ListTblUsorolCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListTblUsorolIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

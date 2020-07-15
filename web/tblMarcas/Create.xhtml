@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTblMarcasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTblMarcasLabel_marIdMarca}" for="marIdMarca" />
+                    <h:inputText id="marIdMarca" value="#{tblMarcasController.selected.marIdMarca}" title="#{bundle.CreateTblMarcasTitle_marIdMarca}" required="true" requiredMessage="#{bundle.CreateTblMarcasRequiredMessage_marIdMarca}"/>
+                    <h:outputLabel value="#{bundle.CreateTblMarcasLabel_marNombreMarca}" for="marNombreMarca" />
+                    <h:inputText id="marNombreMarca" value="#{tblMarcasController.selected.marNombreMarca}" title="#{bundle.CreateTblMarcasTitle_marNombreMarca}" required="true" requiredMessage="#{bundle.CreateTblMarcasRequiredMessage_marNombreMarca}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tblMarcasController.create}" value="#{bundle.CreateTblMarcasSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{tblMarcasController.prepareList}" value="#{bundle.CreateTblMarcasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTblMarcasIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

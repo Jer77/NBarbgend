@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap");
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/*Estilos Breadcrum*/
+
+ul.breadcrumb {
+	margin: 0;
+	list-style: none;
+	background-color: #FFFFFF;
+	border-bottom-style: 1px solid gray;
+}
+
+ul.breadcrumb li {
+	display: inline;
+	font-size: 15px;
+}
+
+ul.breadcrumb li+li:before {
+	padding: 5px;
+	color: #000000;
+	content: "-\00a0";
+}
+
+ul.breadcrumb li a {
+	color: #594C3B;
+	text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+	color: #D9D2C5;
+	text-decoration: none;
+}
+
+/*Estilos Notificacion área*/
+
+.notification{
+	padding-top: 10px;
+	padding-right: 12px;
+	padding-bottom: 10px;
+}
+
+ul.notification {
+	margin: 0;
+	list-style: none;
+	background-color: #FFFFFF;
+	text-align: right;
+}
+
+ul.notification li {
+	display: inline;
+	font-size: 18px;
+}
+
+ul.notification li+li:before {
+	padding: 8px;
+	color: #000000;
+	content: "-\00a0";
+}
+
+.borde{
+	border-bottom: 0.5px solid gray;
+}
+
+li img{
+	width: 22px;
+	height: 22px;
+}
+
+/*Contenedores*/
+.content{
+	text-align: center;
+	margin : 0 !important;
+	padding: 0 !important;
+}
+
+.row{
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+.servicio img{
+	padding-top: 30px;
+	width: 645px;
+	height: 430px;
+}
+
+footer .footer{
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+footer .col{
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.footer{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+}
+
+/*Espaciado divs del formulario*/
+.inputform{
+	padding: 10px;
+}
+
+/*Ancho de inputs*/
+.inputform select{
+	width: 30%;
+}
+
+/*Medidas imagen alineada a la derecha*/
+.footer img{
+	width: 150px;
+	height: 205px;
+	float: right;
+	margin-top: 18px;
+}
+
+/*Links-Botones temporal*/
+.btn{
+	margin: 10px;
+	font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+	font-size: 12pt !important;
+	background: #D5B387 !important;
+	border-color: #594C3B !important;
+	color: #594C3B !important;
+	border-radius: 10px !important;
+}
+
+.btn:hover {
+	margin: 10px;
+	color: #D9D2C5 !important;
+	font-size: 12pt;
+	text-decoration: none;
+	background-color: #736A5F !important;
+}
+
+/*Títulos*/
+h1, h3{
+	text-align: center;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	color: #594C3B;
+}
+
+/*Parrafos*/
+p{
+	text-align: center;
+	font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+	margin-bottom: 0 !important;
+}
+
+/*Parrafo de Footer*/
+p.text_right{
+	text-align: right;
+	color: #594C3B;
+	font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+	clear: right;
+	margin-bottom: 0px;
+}
+
+@media screen and (max-width:1000px){
+
+	/*Contenedores*/
+
+	.footer{
+		padding-top: 0;
+	}
+
+	body > div > header > div:nth-child(1){
+		padding-right: 2px;
+		padding-left: 0;
+		color: #594C3B;
+	}
+
+	body > div > header > div.borde.col.col-lg-3{
+		padding-right: 2px;
+		padding-left: 0;
+		color: #594C3B;
+	}
+
+	/*Estilos Breadcrum*/
+
+	ul.breadcrumb {
+		margin: 0;
+		padding-top: 8px;
+		padding-right: 2px;
+		padding-left: 2px;
+		list-style: none;
+		border-bottom-style: 1px solid #594C3B;
+	}
+
+	ul.breadcrumb li {
+		display: inline;
+		font-size: 12px;
+	}
+
+	ul.breadcrumb li+li:before {
+		padding: 1px;
+		color: #000000;
+		content: "-\00a0";
+	}
+
+	ul.breadcrumb li a {
+		color: #594C3B;
+		text-decoration: none;
+	}
+
+	ul.breadcrumb li a:hover {
+		color: #D9D2C5;
+		text-decoration: none;
+	}
+
+	/*Estilos Notificacion área*/
+
+	.notification{
+		padding-top: 8px;
+		padding-right: 2px;
+		padding-bottom: 8px;
+	}
+
+	ul.notification {
+		margin: 0;
+		list-style: none;
+		text-align: right;
+	}
+
+	ul.notification li {
+		display: inline;
+		font-size: 12px;
+	}
+
+	ul.notification li+li:before {
+		padding: 2px;
+		color: #000000;
+		content: "-\00a0";
+	}
+
+	.notification img{
+		width: 14px;
+		height: 14px;
+	}
+
+	select{
+		width: 80% !important;
+	}
+
+	.servicio img{
+		padding-top: 30px;
+		width: 350px;
+		height: 233px;
+	}
+
+	/*Links-Botones temporal*/
+	.abutton{
+		text-align: center;
+		display: inline-block;
+		font-family: 'Nirmala UI', 'Malgun Gothic', sans-serif;
+		width: 90px;
+		height: 25px;
+		padding: 2px;
+		background: #D5B387;
+		text-decoration: none;
+		color: #594C3B;
+		border-radius: 10px;
+		font-size: 10pt;
+		margin-top: 10px;
+	}
+}

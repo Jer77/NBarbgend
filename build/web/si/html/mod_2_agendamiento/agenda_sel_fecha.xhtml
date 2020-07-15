@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <title>Agendamiento</title>
+    <h:outputStylesheet name="css/jsfcrud.css"></h:outputStylesheet>
+    <link rel="stylesheet" jsf:name="css/mod_2_agendamiento/estilos_agenda_sel_fecha.css"></link>
+    <link rel="stylesheet" jsf:name="bootstrap/css/bootstrap.min.css"></link>
+    <link rel="shortcut icon" jsf:name="resources/css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+</h:head>
+<h:body>
+	<div class="content">
+		<header class="row">
+			<!-- Columna de Breadcrum -->
+			<div class="borde col col-lg-9">
+				<ul class="breadcrumb">
+					<li><a jsf:outcome="test/test.xhtml">Home</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Agenda</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Seleccionar Servicio</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Seleccionar Barbero</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Seleccionar Producto</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Seleccionar Fecha</a></li>
+				</ul>
+			</div>
+			<!-- Columna área de notificación -->
+			<div class="borde col col-lg-3">
+				<ul class="notification">
+					<li><h:graphicImage value="../../../resources/css/img/Elements/list.jpg"/></li>
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/notificacion.png"/></li>
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/mensaje.png"/></li>
+					<li>Cliente</li>
+				</ul>
+			</div>
+		</header>
+		<div class="row">
+			<div class="col">
+				<h1>Seleccionar Fecha</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="calendar">
+					<div class="calendar_picture">
+						<h2>Martes, 10</h2>
+						<h3>Diciembre</h3>
+					</div>
+					<div class="calendar_date">
+						<div class="calendar_day">L</div>
+						<div class="calendar_day">M</div>
+						<div class="calendar_day">M</div>
+						<div class="calendar_day">J</div>
+						<div class="calendar_day">V</div>
+						<div class="calendar_day">S</div>
+						<div class="calendar_day">D</div>
+						<div class="calendar_number"></div>
+						<div class="calendar_number"></div>
+						<div class="calendar_number"></div>
+						<div class="calendar_number"></div>
+						<div class="calendar_number"></div>
+						<div class="calendar_number"></div>
+						<div class="calendar_number">1</div>
+						<div class="calendar_number">1</div>
+						<div class="calendar_number">3</div>
+						<div class="calendar_number">4</div>
+						<div class="calendar_number">5</div>
+						<div class="calendar_number">6</div>
+						<div class="calendar_number">7</div>
+						<div class="calendar_number">8</div>
+						<div class="calendar_number">9</div>
+						<div class="calendar_number calendar_number-current">10</div>
+						<div class="calendar_number">11</div>
+						<div class="calendar_number">12</div>
+						<div class="calendar_number">13</div>
+						<div class="calendar_number">14</div>
+						<div class="calendar_number">15</div>
+						<div class="calendar_number">16</div>
+						<div class="calendar_number">17</div>
+						<div class="calendar_number">18</div>
+						<div class="calendar_number">19</div>
+						<div class="calendar_number">20</div>
+						<div class="calendar_number">21</div>
+						<div class="calendar_number">22</div>
+						<div class="calendar_number">23</div>
+						<div class="calendar_number">24</div>
+						<div class="calendar_number">25</div>
+						<div class="calendar_number">26</div>
+						<div class="calendar_number">27</div>
+						<div class="calendar_number">28</div>
+						<div class="calendar_number">29</div>
+						<div class="calendar_number">30</div>
+						<div class="calendar_number">31</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" align="center">
+			<div class="inputform col">
+				<h:form>
+					<h:inputText id="primerNombre" value="#{TblUsuario.usuPrimerNombre}" a:placeholder="Selecciona La Hora" styleClass="form-control form-control-sm"/>
+				</h:form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<h:commandButton actionListener="#{TblUsuario.metodoVuelveLanding}" value="Agenda Esta Cita" styleClass="btn"></h:commandButton>
+			</div>
+		</div>
+		<footer class="footer row">
+			<div class="col">
+				<h:graphicImage value="../../../resources/css/img/Logo/Barbgend_logo.png"/>
+				<p class="text_right">© 2019 - GAES 3 ADSI 2021 - SENA CSF Regional Distrito Capital - Todos los derechos reservados.</p>
+			</div>
+		</footer>
+	</div>
+</h:body>
+</html>

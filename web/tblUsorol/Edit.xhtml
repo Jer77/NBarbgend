@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTblUsorolTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTblUsorolLabel_usrlIdUsuariorol}" for="usrlIdUsuariorol" />
+                    <h:inputText id="usrlIdUsuariorol" value="#{tblUsorolController.selected.usrlIdUsuariorol}" title="#{bundle.EditTblUsorolTitle_usrlIdUsuariorol}" required="true" requiredMessage="#{bundle.EditTblUsorolRequiredMessage_usrlIdUsuariorol}"/>
+                    <h:outputLabel value="#{bundle.EditTblUsorolLabel_usrlFechaIngreso}" for="usrlFechaIngreso" />
+                    <h:inputText id="usrlFechaIngreso" value="#{tblUsorolController.selected.usrlFechaIngreso}" title="#{bundle.EditTblUsorolTitle_usrlFechaIngreso}" required="true" requiredMessage="#{bundle.EditTblUsorolRequiredMessage_usrlFechaIngreso}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditTblUsorolLabel_usrlIdRolFk}" for="usrlIdRolFk" />
+                    <h:selectOneMenu id="usrlIdRolFk" value="#{tblUsorolController.selected.usrlIdRolFk}" title="#{bundle.EditTblUsorolTitle_usrlIdRolFk}" required="true" requiredMessage="#{bundle.EditTblUsorolRequiredMessage_usrlIdRolFk}">
+                        <f:selectItems value="#{tblRolesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditTblUsorolLabel_tblUsuario}" for="tblUsuario" />
+                    <h:selectOneMenu id="tblUsuario" value="#{tblUsorolController.selected.tblUsuario}" title="#{bundle.EditTblUsorolTitle_tblUsuario}" required="true" requiredMessage="#{bundle.EditTblUsorolRequiredMessage_tblUsuario}">
+                        <f:selectItems value="#{tblUsuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{tblUsorolController.update}" value="#{bundle.EditTblUsorolSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTblUsorolViewLink}"/>
+                <br />
+                <h:commandLink action="#{tblUsorolController.prepareList}" value="#{bundle.EditTblUsorolShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTblUsorolIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

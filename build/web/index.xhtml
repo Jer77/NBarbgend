@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <h:head>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+        <title>Celebrity Barber Shop-Barbgend</title>
+        <link rel="stylesheet" jsf:name="css/index.css"></link>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"></link>
+        <link rel="shortcut icon" jsf:name="css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+    </h:head>
+    <h:body>
+        <div class="container-fluid">
+            <!-- Header -->
+            <header class="row no-gutters">
+                <div class="col-md-12 col-lg-4"></div>
+                <!-- Columna titulo -->
+                <div class="col-md-12 col-lg-4">
+                    <h1>Celebrity Barber Shop</h1>
+                </div>
+                <!-- Columna bandera -->
+                <div class="col-md-12 col-lg-4 align-self-center">
+                    <!-- imagen de bandera -->
+                    <h:graphicImage value="resources/css/img/Flags/flagUK.svg" styleClass="img_icon" onclick="location.href = 'index_english.html';"/>
+                </div>
+            </header>
+            <!-- Main -->
+            <main class="row justify-content-center no-gutters">
+                <!-- Div que contiene la imagen -->
+                <div class="col-lg-8 d-flex justify-content-center">
+                    <!-- Imagen -->
+                    <figure>
+                        <h:graphicImage value="resources/css/img/Celebrity/CelebrityS.jpg" styleClass="img-fluid" alt="Responsive image"/>
+                    </figure>
+                </div>
+                <!-- Div que contiene texto de Servicios y Filosofía -->
+                <div class="col-lg-4 align-self-center">
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <!-- Servicios -->
+                            <h2>Servicios</h2>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <h3>Barbería</h3>
+                            <p>Corte, barba y cuidados masculinos. Todos nuestros servicios incluyen limpieza facial superficial, vaporización facial, masajes faciales, lavado y cepillado con productos de alta gama.</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <h3>Celebrity For Men ©</h3>
+                            <p>El desarrollo de los productos Celebrity For Men© aportara cuidado estilo y bienestar. Disfruta de todos los beneficios que nuestra linea de cuidados masculino tiene para ti.</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <h3>Tarjetas de Regalo</h3>
+                            <p>
+                                La persona que quieres merece disfrutar de un momento Celebridad. Adquiere nuestra tarjeta de regalo recargable en todas nuestras sedes Celebrity Barber Shop y regala una experiencia única a tus caballeros especiales.</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <h3>Minicelebridades</h3>
+                            <p>¡No hay edades para tener estilo! Convierte al más pequeño de la casa en un caballerito CELEBRITY. Todos nuestros procesos son aptos para todas las edades, no olvides reclamar tu #GlobitoCelebrity si eres toda una minicelebridad.</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col">
+                            <h2>Nuestra Filosofía</h2>
+                            <h3>El Caballero Celebrity puede sentirse aludido cuando de estilo se trate.</h3>
+                            <p>Lograr ser el lugar predilecto para todos los hombres gracias a nuestra buena atención, diversidad de servicios y exclusividad. Luego de convertirnos en un referente en el mercado a nivel nacional, nuestro próximo paso es internacionalizar nuestra marca y brindar momentos de cuidado masculino a caballeros de diferentes culturas.</p>
+                        </div>
+                    </div>			
+                </div>
+            </main>
+            <!-- Fila Final -->
+            <content class="row no-gutters">
+                <div class="col-md-4 align-self-center">
+                    <!-- Información Contáctenos -->
+                    <h2>Contáctanos</h2>
+                    <h6>Correo electrónico: ceo@celebritybs.co.</h6>
+                    <h6>Medellín: (034) 322 4316</h6>
+                    <h6>Bogotá: (031) 746 7261</h6>
+                    <!-- Iconos de Redes sociales -->
+                    <h:graphicImage styleClass="img-redes" value="resources/css/img/Elements/fb_white.png" onclick="location.href = 'https://www.facebook.com/Celebritybarbershop1/'"/>
+                    <h:graphicImage styleClass="img-redes" value="resources/css/img/Elements/instagram.png" onclick="location.href = 'https://www.instagram.com/celebritybarbershop/'"/>
+                </div>
+                <div class="col-md-4 align-self-center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15906.362394297676!2d-74.0525726!3d4.666848!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe696032072ee69f1!2sCelebrity%20Barber%20Shop%20Bogot%C3%A1!5e0!3m2!1ses-419!2sco!4v1575387457880!5m2!1ses-419!2sco" allowfullscreen=""></iframe>
+                </div>
+                <div class="col-md-4 align-self-center">
+                    <h:form>
+                    <h2>Agenda tu cita</h2>
+                    <!-- Botones de acción -->
+                    <a class="btn" jsf:outcome="login.xhtml">Ingresar</a>
+                    <a class="btn" jsf:outcome="tblUsuario/Create">Registrarte</a>
+                    </h:form>
+                </div>
+            </content>
+            <!-- Footer -->
+            <footer class="no-gutters row">
+                <div class="col text_right"></div>
+                <div class="col text_right"></div>
+                <!-- Texto de copyright de Footer -->
+                <div class="align-self-end"><p class="text_right">© 2019 - GAES 3 ADSI 2021 - SENA CSF Regional Distrito Capital - Todos los derechos reservados.</p>
+                </div>
+            </footer>
+        </div>
+        <br />
+        <!--<h:link outcome="/tblAgendamiento/List" value="Show All TblAgendamiento Items"/>
+        <br />
+        <h:link outcome="/tblCatalogobarbero/List" value="Show All TblCatalogobarbero Items"/>
+        <br />
+        <h:link outcome="/tblDocumentos/List" value="Show All TblDocumentos Items"/>
+        <br />
+        <h:link outcome="/tblEstadoagendamiento/List" value="Show All TblEstadoagendamiento Items"/>
+        <br />
+        <h:link outcome="/tblMarcas/List" value="Show All TblMarcas Items"/>
+        <br />
+        <h:link outcome="/tblProducto/List" value="Show All TblProducto Items"/>
+        <br />
+        <h:link outcome="/tblResumenagendamiento/List" value="Show All TblResumenagendamiento Items"/>
+        <br />
+        <h:link outcome="/tblResumenproducto/List" value="Show All TblResumenproducto Items"/>
+        <br />
+        <h:link outcome="/tblRoles/List" value="Show All TblRoles Items"/>
+        <br />
+        <h:link outcome="/tblServicio/List" value="Show All TblServicio Items"/>
+        <br />
+        <h:link outcome="/tblUsorol/List" value="Show All TblUsorol Items"/>
+        <br />
+        <h:link outcome="/tblUsuario/List" value="Show All TblUsuario Items"/>-->
+    </h:body>
+</html>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+<h:head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <title>¡Error 404!</title>
+    <h:outputStylesheet name="css/jsfcrud.css"></h:outputStylesheet>
+    <link rel="stylesheet" jsf:name="css/mod_1_usuarios/estilos_pagina_error.css"></link>
+    <link rel="stylesheet" jsf:name="bootstrap/css/bootstrap.min.css"></link>
+    <link rel="shortcut icon" jsf:name="resources/css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+</h:head>
+<h:body>
+	<header class="header">
+		<div class="row">
+			<div class="col-sm-auto">
+				<!-- Logo -->
+				<img class="img_logo" src="../../img/Logo/Barbgend_logo.png">
+			</div>
+			<div class="col">
+				<!-- Mensajes -->
+				<h1>ERROR 404</h1>
+				<p>Como sabemos que no leeras esto salvo haciendo clic en una página que no existe (y todas nuestras páginas existen),<br>podemos permitirnos el lujo de escribir datos irrefutables.</p>
+				<p>Por ejemplo: Cuando se desmovilizaron las FARC los problemas reales de Colombia salieron a flote y no hay excusa para no solucionarlos.</p>
+				<h3>¡Oh! Y la página que estás buscando no está en el servidor.</h3>
+			</div>
+			<div class="col-sm-auto">
+				<!-- Menú oculto -->
+				<div id="mySidenav" class="sidenav">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					<a jsf:outcome="test/test.xhtml">Home</a>
+					<a jsf:outcome="test/test.xhtml">Administrador</a>
+				</div>
+				<!-- Icono -->
+				<img class="img_icon" src="../../img/Elements/icon_menu_c.png" onclick="openNav()">
+			</div>
+		</div>
+	</header>
+	<div class="content"></div>
+	<!-- Pie de página -->
+	<footer class="footer">
+		<p class="text_right">© 2019 - GAES 3 ADSI 2021 - SENA CSF Regional Distrito Capital - Todos los derechos reservados.</p>
+	</footer>
+	<!-- Script que permite el funcionamiento del menú oculto -->
+	<script>
+	function openNav() {
+	  document.getElementById("mySidenav").style.width = "100%";
+	}
+
+	function closeNav() {
+	  document.getElementById("mySidenav").style.width = "0";
+	}
+	</script>
+</h:body>
+</html>

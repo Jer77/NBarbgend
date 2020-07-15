@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListTblProductoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListTblProductoEmpty}" rendered="#{tblProductoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{tblProductoController.items.rowCount > 0}">
+                    <h:outputText value="#{tblProductoController.pagination.pageFirstItem + 1}..#{tblProductoController.pagination.pageLastItem + 1}/#{tblProductoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{tblProductoController.previous}" value="#{bundle.Previous} #{tblProductoController.pagination.pageSize}" rendered="#{tblProductoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{tblProductoController.next}" value="#{bundle.Next} #{tblProductoController.pagination.pageSize}" rendered="#{tblProductoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{tblProductoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblProductoTitle_proIdProducto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.proIdProducto}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblProductoTitle_proNombreProducto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.proNombreProducto}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblProductoTitle_proPrecioUnitario}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.proPrecioUnitario}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblProductoTitle_proDescripcionProducto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.proDescripcionProducto}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblProductoTitle_proPresentacion}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.proPresentacion}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblProductoTitle_proIdMarcaFk}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.proIdMarcaFk}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{tblProductoController.prepareView}" value="#{bundle.ListTblProductoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tblProductoController.prepareEdit}" value="#{bundle.ListTblProductoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tblProductoController.destroy}" value="#{bundle.ListTblProductoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{tblProductoController.prepareCreate}" value="#{bundle.ListTblProductoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListTblProductoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

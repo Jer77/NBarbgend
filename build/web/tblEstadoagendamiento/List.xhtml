@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListTblEstadoagendamientoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListTblEstadoagendamientoEmpty}" rendered="#{tblEstadoagendamientoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{tblEstadoagendamientoController.items.rowCount > 0}">
+                    <h:outputText value="#{tblEstadoagendamientoController.pagination.pageFirstItem + 1}..#{tblEstadoagendamientoController.pagination.pageLastItem + 1}/#{tblEstadoagendamientoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{tblEstadoagendamientoController.previous}" value="#{bundle.Previous} #{tblEstadoagendamientoController.pagination.pageSize}" rendered="#{tblEstadoagendamientoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{tblEstadoagendamientoController.next}" value="#{bundle.Next} #{tblEstadoagendamientoController.pagination.pageSize}" rendered="#{tblEstadoagendamientoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{tblEstadoagendamientoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblEstadoagendamientoTitle_esaIdEstado}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.esaIdEstado}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblEstadoagendamientoTitle_esaStatus}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.esaStatus}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{tblEstadoagendamientoController.prepareView}" value="#{bundle.ListTblEstadoagendamientoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tblEstadoagendamientoController.prepareEdit}" value="#{bundle.ListTblEstadoagendamientoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tblEstadoagendamientoController.destroy}" value="#{bundle.ListTblEstadoagendamientoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{tblEstadoagendamientoController.prepareCreate}" value="#{bundle.ListTblEstadoagendamientoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListTblEstadoagendamientoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTblCatalogobarberoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTblCatalogobarberoLabel_catIdCatalogo}" for="catIdCatalogo" />
+                    <h:inputText id="catIdCatalogo" value="#{tblCatalogobarberoController.selected.catIdCatalogo}" title="#{bundle.CreateTblCatalogobarberoTitle_catIdCatalogo}" required="true" requiredMessage="#{bundle.CreateTblCatalogobarberoRequiredMessage_catIdCatalogo}"/>
+                    <h:outputLabel value="#{bundle.CreateTblCatalogobarberoLabel_catFechaIngreso}" for="catFechaIngreso" />
+                    <h:inputText id="catFechaIngreso" value="#{tblCatalogobarberoController.selected.catFechaIngreso}" title="#{bundle.CreateTblCatalogobarberoTitle_catFechaIngreso}" required="true" requiredMessage="#{bundle.CreateTblCatalogobarberoRequiredMessage_catFechaIngreso}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateTblCatalogobarberoLabel_catDescripcion}" for="catDescripcion" />
+                    <h:inputText id="catDescripcion" value="#{tblCatalogobarberoController.selected.catDescripcion}" title="#{bundle.CreateTblCatalogobarberoTitle_catDescripcion}" />
+                    <h:outputLabel value="#{bundle.CreateTblCatalogobarberoLabel_catImg}" for="catImg" />
+                    <h:inputTextarea rows="4" cols="30" id="catImg" value="#{tblCatalogobarberoController.selected.catImg}" title="#{bundle.CreateTblCatalogobarberoTitle_catImg}" />
+                    <h:outputLabel value="#{bundle.CreateTblCatalogobarberoLabel_catIdBarberoFk}" for="catIdBarberoFk" />
+                    <h:selectOneMenu id="catIdBarberoFk" value="#{tblCatalogobarberoController.selected.catIdBarberoFk}" title="#{bundle.CreateTblCatalogobarberoTitle_catIdBarberoFk}" required="true" requiredMessage="#{bundle.CreateTblCatalogobarberoRequiredMessage_catIdBarberoFk}">
+                        <f:selectItems value="#{tblUsuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tblCatalogobarberoController.create}" value="#{bundle.CreateTblCatalogobarberoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{tblCatalogobarberoController.prepareList}" value="#{bundle.CreateTblCatalogobarberoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTblCatalogobarberoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

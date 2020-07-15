@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTblServicioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTblServicioLabel_tblServicioPK_serIdServicio}" for="tblServicioPK_serIdServicio" />
+                    <h:inputText id="tblServicioPK_serIdServicio" value="#{tblServicioController.selected.tblServicioPK.serIdServicio}" title="#{bundle.EditTblServicioTitle_tblServicioPK_serIdServicio}" required="true" requiredMessage="#{bundle.EditTblServicioRequiredMessage_tblServicioPK_serIdServicio}"/>
+                    <h:outputLabel value="#{bundle.EditTblServicioLabel_serNombreServicio}" for="serNombreServicio" />
+                    <h:inputText id="serNombreServicio" value="#{tblServicioController.selected.serNombreServicio}" title="#{bundle.EditTblServicioTitle_serNombreServicio}" required="true" requiredMessage="#{bundle.EditTblServicioRequiredMessage_serNombreServicio}"/>
+                    <h:outputLabel value="#{bundle.EditTblServicioLabel_serTecnicaServicio}" for="serTecnicaServicio" />
+                    <h:inputText id="serTecnicaServicio" value="#{tblServicioController.selected.serTecnicaServicio}" title="#{bundle.EditTblServicioTitle_serTecnicaServicio}" required="true" requiredMessage="#{bundle.EditTblServicioRequiredMessage_serTecnicaServicio}"/>
+                    <h:outputLabel value="#{bundle.EditTblServicioLabel_serCostoServicio}" for="serCostoServicio" />
+                    <h:inputText id="serCostoServicio" value="#{tblServicioController.selected.serCostoServicio}" title="#{bundle.EditTblServicioTitle_serCostoServicio}" required="true" requiredMessage="#{bundle.EditTblServicioRequiredMessage_serCostoServicio}"/>
+                    <h:outputLabel value="#{bundle.EditTblServicioLabel_tblAgendamiento}" for="tblAgendamiento" />
+                    <h:selectOneMenu id="tblAgendamiento" value="#{tblServicioController.selected.tblAgendamiento}" title="#{bundle.EditTblServicioTitle_tblAgendamiento}" required="true" requiredMessage="#{bundle.EditTblServicioRequiredMessage_tblAgendamiento}">
+                        <f:selectItems value="#{tblAgendamientoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditTblServicioLabel_serIdBarberoFk}" for="serIdBarberoFk" />
+                    <h:selectOneMenu id="serIdBarberoFk" value="#{tblServicioController.selected.serIdBarberoFk}" title="#{bundle.EditTblServicioTitle_serIdBarberoFk}" required="true" requiredMessage="#{bundle.EditTblServicioRequiredMessage_serIdBarberoFk}">
+                        <f:selectItems value="#{tblUsuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{tblServicioController.update}" value="#{bundle.EditTblServicioSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditTblServicioViewLink}"/>
+                <br />
+                <h:commandLink action="#{tblServicioController.prepareList}" value="#{bundle.EditTblServicioShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditTblServicioIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

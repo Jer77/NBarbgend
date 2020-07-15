@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+<h:head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <title>GDocuemntación</title>
+    <h:outputStylesheet name="css/jsfcrud.css"></h:outputStylesheet>
+    <link rel="stylesheet" jsf:name="css/mod_1_usuarios/estilos_documentacion.css"></link>
+    <link rel="stylesheet" jsf:name="bootstrap/css/bootstrap.min.css"></link>
+    <link rel="shortcut icon" jsf:name="resources/css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+</h:head>
+<h:body>
+	<div class="content" align="center">
+		<div class="row">
+			<!-- Columna de Breadcrum -->
+			<div class="borde col">
+				<ul class="breadcrumb">
+					<li><a jsf:outcome="test/test.xhtml">Home</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Documentación</a></li>
+				</ul>
+			</div>
+			<!-- Columna área de notificación -->
+			<div class="borde col">
+				<ul class="notification">
+					<li><h:graphicImage value="../../../resources/css/img/Elements/list.jpg"/></li>
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/notificacion.png"/></li>
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/mensaje.png"/></li>
+					<li>Administrador</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<!-- Título -->
+				<h1>Documentación</h1>
+			</div>
+		</div>
+		<!-- Contenedor de información de cada Fase -->
+		<div class="row">
+			<!-- Contenedor de documentación de Fase 1 -->
+			<div class="col_fase col-lg-5 col-md-5 col-sm-12 col-xs-12">
+				<h3>Fase 1</h3>
+				<!-- Links-Botones de cada documento Fase 1 -->
+				<a class="btn" href="../../doc/Fase_1/Formulación_del_Proyecto.pdf" target="principal_area_1">Formulación de Proyecto</a>
+				<a class="btn" href="../../doc/Fase_1/IEEE830 Barbgend.pdf" target="principal_area_1">Documento IEEE 830</a>
+				<a class="btn" href="../../doc/Fase_1/Diagramas de Procesos.pdf" target="principal_area_1">Diagramas de Procesos</a>
+				<a class="btn" href="../../doc/Fase_1/Diagramas de CU.pdf" target="principal_area_1">Diagramas de CU</a>
+				<a class="btn" href="../../doc/Fase_1/Diagramas CU Extendido.pdf" target="principal_area_1">Diagramas de CU Extendido</a>
+				<a class="btn" href="../../doc/Fase_1/Barbgend.pdf" target="principal_area_1">Presentación</a>
+				<a class="btn" href="../../doc/Fase_1/Wireframes.pdf" target="principal_area_1">WireFrames</a>
+			</div>
+			<!-- Contenedor de documentación de Fase 2 -->
+			<div class="col_fase col-lg-5 col-md-5 col-sm-12 col-xs-12">
+				<h3>Fase 2</h3>
+				<!-- Links-Botones de cada documento Fase 2 -->
+				<a class="btn" href="../../doc/Fase_2/Barbgend Documento Análisis del Sistema.pdf" target="principal_area_1">Documento de Alálisis del Sistema</a>
+				<a class="btn" href="../../doc/Fase_2/Barbgend fase 2.pdf" target="principal_area_1">Presentación</a>
+				<a class="btn" href="../../doc/Fase_2/Manual de Identidad Corporativa Barbgend.pdf" target="principal_area_1">Manual de Identidad Corporativo</a>
+				<a class="btn" href="../../doc/Fase_2/Mocukps.pdf" target="principal_area_1">Mockups</a>
+				<a class="btn" href="../../doc/Fase_2/Diagrama de Entidad.pdf" target="principal_area_1">Diagrama de Entidad-Relación</a>
+				<a class="btn" href="../../doc/Fase_2/Mapa de Navegacion.pdf" target="principal_area_1">Mapa de Navegación</a>
+				<a class="btn" href="../../doc/Fase_2/Paginas de Error.pdf" target="principal_area_1">Páginas de Error</a>
+			</div>
+		</div>
+		<!-- Iframe donde aparece cada documento seleccionado -->
+		<div class="content-iframe">
+			<iframe name="principal_area_1" src="documentacion_home.html"></iframe>
+		</div>
+	</div>
+</h:body>
+</html>

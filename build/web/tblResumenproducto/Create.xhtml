@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTblResumenproductoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTblResumenproductoLabel_tblResumenproductoPK_respIdResumen}" for="tblResumenproductoPK_respIdResumen" />
+                    <h:inputText id="tblResumenproductoPK_respIdResumen" value="#{tblResumenproductoController.selected.tblResumenproductoPK.respIdResumen}" title="#{bundle.CreateTblResumenproductoTitle_tblResumenproductoPK_respIdResumen}" required="true" requiredMessage="#{bundle.CreateTblResumenproductoRequiredMessage_tblResumenproductoPK_respIdResumen}"/>
+                    <h:outputLabel value="#{bundle.CreateTblResumenproductoLabel_respCantidad}" for="respCantidad" />
+                    <h:inputText id="respCantidad" value="#{tblResumenproductoController.selected.respCantidad}" title="#{bundle.CreateTblResumenproductoTitle_respCantidad}" required="true" requiredMessage="#{bundle.CreateTblResumenproductoRequiredMessage_respCantidad}"/>
+                    <h:outputLabel value="#{bundle.CreateTblResumenproductoLabel_respPrecioTotal}" for="respPrecioTotal" />
+                    <h:inputText id="respPrecioTotal" value="#{tblResumenproductoController.selected.respPrecioTotal}" title="#{bundle.CreateTblResumenproductoTitle_respPrecioTotal}" required="true" requiredMessage="#{bundle.CreateTblResumenproductoRequiredMessage_respPrecioTotal}"/>
+                    <h:outputLabel value="#{bundle.CreateTblResumenproductoLabel_respIdClienteFk}" for="respIdClienteFk" />
+                    <h:selectOneMenu id="respIdClienteFk" value="#{tblResumenproductoController.selected.respIdClienteFk}" title="#{bundle.CreateTblResumenproductoTitle_respIdClienteFk}" required="true" requiredMessage="#{bundle.CreateTblResumenproductoRequiredMessage_respIdClienteFk}">
+                        <f:selectItems value="#{tblUsuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateTblResumenproductoLabel_tblProducto}" for="tblProducto" />
+                    <h:selectOneMenu id="tblProducto" value="#{tblResumenproductoController.selected.tblProducto}" title="#{bundle.CreateTblResumenproductoTitle_tblProducto}" required="true" requiredMessage="#{bundle.CreateTblResumenproductoRequiredMessage_tblProducto}">
+                        <f:selectItems value="#{tblProductoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tblResumenproductoController.create}" value="#{bundle.CreateTblResumenproductoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{tblResumenproductoController.prepareList}" value="#{bundle.CreateTblResumenproductoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTblResumenproductoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

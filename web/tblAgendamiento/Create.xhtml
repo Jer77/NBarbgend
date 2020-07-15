@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTblAgendamientoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTblAgendamientoLabel_ageIdAgendamiento}" for="ageIdAgendamiento" />
+                    <h:inputText id="ageIdAgendamiento" value="#{tblAgendamientoController.selected.ageIdAgendamiento}" title="#{bundle.CreateTblAgendamientoTitle_ageIdAgendamiento}" required="true" requiredMessage="#{bundle.CreateTblAgendamientoRequiredMessage_ageIdAgendamiento}"/>
+                    <h:outputLabel value="#{bundle.CreateTblAgendamientoLabel_ageFechaAgendamiento}" for="ageFechaAgendamiento" />
+                    <h:inputText id="ageFechaAgendamiento" value="#{tblAgendamientoController.selected.ageFechaAgendamiento}" title="#{bundle.CreateTblAgendamientoTitle_ageFechaAgendamiento}" required="true" requiredMessage="#{bundle.CreateTblAgendamientoRequiredMessage_ageFechaAgendamiento}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateTblAgendamientoLabel_ageCalificacionBarbero}" for="ageCalificacionBarbero" />
+                    <h:inputText id="ageCalificacionBarbero" value="#{tblAgendamientoController.selected.ageCalificacionBarbero}" title="#{bundle.CreateTblAgendamientoTitle_ageCalificacionBarbero}" required="true" requiredMessage="#{bundle.CreateTblAgendamientoRequiredMessage_ageCalificacionBarbero}"/>
+                    <h:outputLabel value="#{bundle.CreateTblAgendamientoLabel_ageIdClienteFk}" for="ageIdClienteFk" />
+                    <h:selectOneMenu id="ageIdClienteFk" value="#{tblAgendamientoController.selected.ageIdClienteFk}" title="#{bundle.CreateTblAgendamientoTitle_ageIdClienteFk}" required="true" requiredMessage="#{bundle.CreateTblAgendamientoRequiredMessage_ageIdClienteFk}">
+                        <f:selectItems value="#{tblUsuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateTblAgendamientoLabel_ageIdEstadoFk}" for="ageIdEstadoFk" />
+                    <h:selectOneMenu id="ageIdEstadoFk" value="#{tblAgendamientoController.selected.ageIdEstadoFk}" title="#{bundle.CreateTblAgendamientoTitle_ageIdEstadoFk}" required="true" requiredMessage="#{bundle.CreateTblAgendamientoRequiredMessage_ageIdEstadoFk}">
+                        <f:selectItems value="#{tblEstadoagendamientoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tblAgendamientoController.create}" value="#{bundle.CreateTblAgendamientoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{tblAgendamientoController.prepareList}" value="#{bundle.CreateTblAgendamientoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTblAgendamientoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

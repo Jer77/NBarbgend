@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListTblResumenproductoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListTblResumenproductoEmpty}" rendered="#{tblResumenproductoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{tblResumenproductoController.items.rowCount > 0}">
+                    <h:outputText value="#{tblResumenproductoController.pagination.pageFirstItem + 1}..#{tblResumenproductoController.pagination.pageLastItem + 1}/#{tblResumenproductoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{tblResumenproductoController.previous}" value="#{bundle.Previous} #{tblResumenproductoController.pagination.pageSize}" rendered="#{tblResumenproductoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{tblResumenproductoController.next}" value="#{bundle.Next} #{tblResumenproductoController.pagination.pageSize}" rendered="#{tblResumenproductoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{tblResumenproductoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblResumenproductoTitle_tblResumenproductoPK_respIdResumen}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tblResumenproductoPK.respIdResumen}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblResumenproductoTitle_respCantidad}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.respCantidad}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblResumenproductoTitle_respPrecioTotal}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.respPrecioTotal}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblResumenproductoTitle_respIdClienteFk}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.respIdClienteFk}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblResumenproductoTitle_tblProducto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tblProducto}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{tblResumenproductoController.prepareView}" value="#{bundle.ListTblResumenproductoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tblResumenproductoController.prepareEdit}" value="#{bundle.ListTblResumenproductoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tblResumenproductoController.destroy}" value="#{bundle.ListTblResumenproductoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{tblResumenproductoController.prepareCreate}" value="#{bundle.ListTblResumenproductoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListTblResumenproductoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

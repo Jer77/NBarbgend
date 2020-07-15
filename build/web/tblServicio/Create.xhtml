@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTblServicioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTblServicioLabel_tblServicioPK_serIdServicio}" for="tblServicioPK_serIdServicio" />
+                    <h:inputText id="tblServicioPK_serIdServicio" value="#{tblServicioController.selected.tblServicioPK.serIdServicio}" title="#{bundle.CreateTblServicioTitle_tblServicioPK_serIdServicio}" required="true" requiredMessage="#{bundle.CreateTblServicioRequiredMessage_tblServicioPK_serIdServicio}"/>
+                    <h:outputLabel value="#{bundle.CreateTblServicioLabel_serNombreServicio}" for="serNombreServicio" />
+                    <h:inputText id="serNombreServicio" value="#{tblServicioController.selected.serNombreServicio}" title="#{bundle.CreateTblServicioTitle_serNombreServicio}" required="true" requiredMessage="#{bundle.CreateTblServicioRequiredMessage_serNombreServicio}"/>
+                    <h:outputLabel value="#{bundle.CreateTblServicioLabel_serTecnicaServicio}" for="serTecnicaServicio" />
+                    <h:inputText id="serTecnicaServicio" value="#{tblServicioController.selected.serTecnicaServicio}" title="#{bundle.CreateTblServicioTitle_serTecnicaServicio}" required="true" requiredMessage="#{bundle.CreateTblServicioRequiredMessage_serTecnicaServicio}"/>
+                    <h:outputLabel value="#{bundle.CreateTblServicioLabel_serCostoServicio}" for="serCostoServicio" />
+                    <h:inputText id="serCostoServicio" value="#{tblServicioController.selected.serCostoServicio}" title="#{bundle.CreateTblServicioTitle_serCostoServicio}" required="true" requiredMessage="#{bundle.CreateTblServicioRequiredMessage_serCostoServicio}"/>
+                    <h:outputLabel value="#{bundle.CreateTblServicioLabel_tblAgendamiento}" for="tblAgendamiento" />
+                    <h:selectOneMenu id="tblAgendamiento" value="#{tblServicioController.selected.tblAgendamiento}" title="#{bundle.CreateTblServicioTitle_tblAgendamiento}" required="true" requiredMessage="#{bundle.CreateTblServicioRequiredMessage_tblAgendamiento}">
+                        <f:selectItems value="#{tblAgendamientoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateTblServicioLabel_serIdBarberoFk}" for="serIdBarberoFk" />
+                    <h:selectOneMenu id="serIdBarberoFk" value="#{tblServicioController.selected.serIdBarberoFk}" title="#{bundle.CreateTblServicioTitle_serIdBarberoFk}" required="true" requiredMessage="#{bundle.CreateTblServicioRequiredMessage_serIdBarberoFk}">
+                        <f:selectItems value="#{tblUsuarioController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tblServicioController.create}" value="#{bundle.CreateTblServicioSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{tblServicioController.prepareList}" value="#{bundle.CreateTblServicioShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTblServicioIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

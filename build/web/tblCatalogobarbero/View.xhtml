@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTblCatalogobarberoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTblCatalogobarberoLabel_catIdCatalogo}"/>
+                    <h:outputText value="#{tblCatalogobarberoController.selected.catIdCatalogo}" title="#{bundle.ViewTblCatalogobarberoTitle_catIdCatalogo}"/>
+                    <h:outputText value="#{bundle.ViewTblCatalogobarberoLabel_catFechaIngreso}"/>
+                    <h:outputText value="#{tblCatalogobarberoController.selected.catFechaIngreso}" title="#{bundle.ViewTblCatalogobarberoTitle_catFechaIngreso}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewTblCatalogobarberoLabel_catDescripcion}"/>
+                    <h:outputText value="#{tblCatalogobarberoController.selected.catDescripcion}" title="#{bundle.ViewTblCatalogobarberoTitle_catDescripcion}"/>
+                    <h:outputText value="#{bundle.ViewTblCatalogobarberoLabel_catImg}"/>
+                    <h:outputText value="#{tblCatalogobarberoController.selected.catImg}" title="#{bundle.ViewTblCatalogobarberoTitle_catImg}"/>
+                    <h:outputText value="#{bundle.ViewTblCatalogobarberoLabel_catIdBarberoFk}"/>
+                    <h:outputText value="#{tblCatalogobarberoController.selected.catIdBarberoFk}" title="#{bundle.ViewTblCatalogobarberoTitle_catIdBarberoFk}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tblCatalogobarberoController.destroyAndView}" value="#{bundle.ViewTblCatalogobarberoDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewTblCatalogobarberoEditLink}"/>
+                <br />
+                <h:commandLink action="#{tblCatalogobarberoController.prepareCreate}" value="#{bundle.ViewTblCatalogobarberoCreateLink}" />
+                <br />
+                <h:commandLink action="#{tblCatalogobarberoController.prepareList}" value="#{bundle.ViewTblCatalogobarberoShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewTblCatalogobarberoIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListTblServicioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListTblServicioEmpty}" rendered="#{tblServicioController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{tblServicioController.items.rowCount > 0}">
+                    <h:outputText value="#{tblServicioController.pagination.pageFirstItem + 1}..#{tblServicioController.pagination.pageLastItem + 1}/#{tblServicioController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{tblServicioController.previous}" value="#{bundle.Previous} #{tblServicioController.pagination.pageSize}" rendered="#{tblServicioController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{tblServicioController.next}" value="#{bundle.Next} #{tblServicioController.pagination.pageSize}" rendered="#{tblServicioController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{tblServicioController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblServicioTitle_tblServicioPK_serIdServicio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tblServicioPK.serIdServicio}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblServicioTitle_serNombreServicio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.serNombreServicio}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblServicioTitle_serTecnicaServicio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.serTecnicaServicio}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblServicioTitle_serCostoServicio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.serCostoServicio}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblServicioTitle_tblAgendamiento}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tblAgendamiento}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListTblServicioTitle_serIdBarberoFk}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.serIdBarberoFk}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{tblServicioController.prepareView}" value="#{bundle.ListTblServicioViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tblServicioController.prepareEdit}" value="#{bundle.ListTblServicioEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{tblServicioController.destroy}" value="#{bundle.ListTblServicioDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{tblServicioController.prepareCreate}" value="#{bundle.ListTblServicioCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListTblServicioIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

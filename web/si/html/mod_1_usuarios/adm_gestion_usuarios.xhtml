@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <h:head>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+        <title>Gestión de Usuarios</title>
+        <h:outputStylesheet name="css/jsfcrud.css"></h:outputStylesheet>
+        <link rel="stylesheet" jsf:name="css/mod_1_usuarios/estilos_adm_gestion_usuarios.css"></link>
+        <link rel="stylesheet" jsf:name="bootstrap/css/bootstrap.min.css"></link>
+        <link rel="shortcut icon" jsf:name="resources/css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+    </h:head>
+<h:body>
+	<div class="content">
+		<!-- Primera Fila contiene breadcrum y área de notificación -->
+		<div class="row">
+			<!-- Columna de Breadcrum -->
+			<div class="borde col">
+				<ul class="breadcrumb">
+					<li><a jsf:outcome="test/test.xhtml">Home</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Gestión de Usuarios</a></li>
+				</ul>
+			</div>
+			<!-- Columna área de notificación -->
+			<div class="borde col">
+				<ul class="notification">
+					<li><h:graphicImage value="../../../resources/css/img/Elements/list.jpg"/></li>
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/notificacion.png"/></li>
+ 					<li><h:graphicImage value="../../../resources/css/img/Elements/mensaje.png"/></li>
+					<li>Administrador</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<!-- Título -->
+				<h1>Gestión de Usuarios</h1>
+				<!-- Tabla de usuarios -->
+				<table>
+					<tr>
+						<!-- Títulos de tabla -->
+						<th>Id</th>
+						<th>Nombres</th>
+						<th>Apellidos</th>
+						<th>Tratamiento</th>
+						<th>Correo</th>
+						<th>Teléfono</th>
+						<th>Fecha de Ingreso</th>
+						<th>Profesión</th>
+						<th>Tipo de Usuario</th>
+						<th>Nombre de Usuario</th>
+						<th>Acciones</th>
+					</tr>
+					<tr>
+						<!-- Filas de usuarios -->
+						<td>001</td>
+						<td>Gustavo</td>
+						<td>Castiblanco Prieto</td>
+						<td>Señor</td>
+						<td>gacastiblanco6@misena.edu.co</td>
+						<td>3215675656</td>
+						<td>25/11/2019</td>
+						<td>Desarrollador</td>
+						<td>Administrador</td>
+						<td>GCastiblanco</td>
+						<td>
+							<!-- Iconos de acción -->
+							<h:graphicImage styleClass="img_icon" value="../../../resources/css/img/Elements/edit.png"/>
+							<h:graphicImage styleClass="img_icon" value="../../../resources/css/img/Elements/delete.png"/>
+						</td>
+					</tr>
+					<tr>
+						<td>002</td>
+						<td>Jerson</td>
+						<td>Bermeo</td>
+						<td>Señor</td>
+						<td>jabermeo9@misena.edu.co</td>
+						<td>3215675656</td>
+						<td>25/11/2019</td>
+						<td>Desarrollador</td>
+						<td>Administrador</td>
+						<td>JBermeo</td>
+						<td>
+							<!-- Iconos de acción -->
+							<h:graphicImage styleClass="img_icon" value="../../../resources/css/img/Elements/edit.png"/>
+							<h:graphicImage styleClass="img_icon" value="../../../resources/css/img/Elements/delete.png"/>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!-- Botón crear Usuario -->
+		<div class="row">
+			<div class="col" align="center">
+				<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Crear usuario" styleClass="btn"></h:commandButton>
+			</div>
+		</div>
+		<footer class="footer row">
+			<div class="col">
+				<h:graphicImage value="../../../resources/css/img/Logo/Barbgend_logo.png"/>
+				<p class="text_right">© 2019 - GAES 3 ADSI 2021 - SENA CSF Regional Distrito Capital - Todos los derechos reservados.</p>
+			</div>
+		</footer>
+	</div>
+</h:body>
+</html>

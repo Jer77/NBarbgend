@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+<h:head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+    <title>Gestionar Catálogo</title>
+    <h:outputStylesheet name="css/jsfcrud.css"></h:outputStylesheet>
+    <link rel="stylesheet" jsf:name="css/mod_1_usuarios/estilos_barb_gestion_catalogo.css"></link>
+    <link rel="stylesheet" jsf:name="bootstrap/css/bootstrap.min.css"></link>
+    <link rel="shortcut icon" jsf:name="resources/css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+</h:head>
+<h:body>
+	<!-- Contenedor Main -->
+	<div class="main">
+		<div class="vertical-menu">
+			<!-- Links de cada opción dependiendo de usuario -->
+			<a href="client_home.html" target="principal_area_client">Home</a>
+			<a href="../mod_2_agendamiento/agenda_sel_servicio.html" target="principal_area_client">Agenda tu cita</a>
+			<a href="../mod_2_agendamiento/modificacion_cita.html" target="principal_area_client">Modifica tu cita</a>
+			<a href="../mod_3_productos_servicios/catalogo_servicios.html" target="principal_area_client">Catálogo de Servicios</a>
+			<a href="../mod_3_productos_servicios/catalogo_productos.html" target="principal_area_client">Catálogo de Productos</a>
+			<a href="../mod_3_productos_servicios/catalogo_barberos.html" target="principal_area_client">Conoce Nuestros Barberos</a>
+			<a href="../formularios/calificacion.html" target="principal_area_client">Califica tu servicio</a>
+			<a href="../formularios/contactanos.html" target="principal_area_client">Contáctanos</a>
+			<a href="../../../index.html">Cerrar Sesión</a>
+		</div>
+		<!-- Contenedor Content -->
+		<div class="content">
+			<!-- Iframe donde aparece la opción elegida por defecfo client_home.html-->
+			<iframe name="principal_area_client" src="client_home.html"></iframe>
+		</div>
+	</div>
+</h:body>
+</html>

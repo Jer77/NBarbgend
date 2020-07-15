@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <meta charset="UTF-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+        <title>Editar Usuario</title>
+        <h:outputStylesheet name="css/jsfcrud.css"></h:outputStylesheet>
+        <link rel="stylesheet" jsf:name="css/mod_1_usuarios/estilos_adm_gestion_usuarios_editar.css"></link>
+        <link rel="stylesheet" jsf:name="bootstrap/css/bootstrap.min.css"></link>
+        <link rel="shortcut icon" jsf:name="resources/css/img/Favicon/favicon.ico" type="image/x-icon"></link>
+    </h:head>
+<h:body>
+	<div class="content" align="center">
+		<!-- Primera Fila contiene breadcrum y área de notificación -->
+		<div class="row">
+			<!-- Columna de Breadcrum -->
+			<div class="borde col">
+				<ul class="breadcrumb">
+					<li><a jsf:outcome="test/test.xhtml">Home</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Gestión Usuarios</a></li>
+					<li><a jsf:outcome="test/test.xhtml">Editar</a></li>
+				</ul>
+			</div>
+			<!-- Columna área de notificación -->
+			<div class="borde col">
+				<ul class="notification">
+					<li>Administrador</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<!-- Título ver Usuario-->
+				<h1>Usuario</h1>
+				<table>
+					<tr>
+						<!-- Título de tabla -->
+						<th>Id</th>
+						<th>Nombres</th>
+						<th>Apellidos</th>
+						<th>Tratamiento</th>
+						<th>Correo</th>
+						<th>Teléfono</th>
+						<th>Fecha de Ingreso</th>
+						<th>Profesión</th>
+						<th>Tipo de Usuario</th>
+						<th>Nombre de Usuario</th>
+					</tr>
+					<tr>
+						<!-- Fila información de usuario -->
+						<td>004</td>
+						<td>Maria</td>
+						<td>Garcia</td>
+						<td>Señora</td>
+						<td>mgarcia@misena.edu.co</td>
+						<td>3111234567</td>
+						<td>04/12/2019</td>
+						<td>Ama de Casa</td>
+						<td>Cliente</td>
+						<td>MaGarcia</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col" align="center">
+				<!-- Formulario para editar información de usuarios -->
+				<h:form>
+					<div>
+						<h1>Editar Usuario</h1>
+					</div>
+					<h:inputText id="primerNombre" value="#{TblUsuario.usuPrimerNombre}" a:placeholder="Primer Nombre" styleClass="form-control form-control-sm" required="true" label="¡Introduce tu nombre correctamente!"/>
+					<h:inputText id="segundoNombre" value="#{TblUsuario.usuSegundoNombre}" a:placeholder="Segundo Nombre" styleClass="form-control form-control-sm"/>
+					<h:inputText id="primerApellido" value="#{TblUsuario.usuPrimerApellido}" a:placeholder="Primer Apellido" styleClass="form-control form-control-sm" required="true" label="¡Introduce tu apellido correctamente!"/>
+					<h:inputText id="segundoApellido" value="#{TblUsuario.usuSegundoApellido}" a:placeholder="Segundo Apellido" styleClass="form-control form-control-sm"/>
+					<h:inputText id="fechaNacimiento" value="#{TblUsuario.usuFechaNacimiento}" a:placeholder="Fecha de Nacimiento" styleClass="form-control form-control-sm" required="true"/>
+					<h:inputText id="email" value="#{TblUsuario.usuEmail}" a:placeholder="Correo Electrónico" styleClass="form-control form-control-sm" required="true" label="¡Introduce correctamente tu correo!"/>
+					<h:inputText id="telefonoMovil" value="#{TblUsuario.usuTelefonoMovil}" a:placeholder="Teléfono Móvil" styleClass="form-control form-control-sm" required="true" label="¡Ingresa tu número de teléfono!"/>
+					<h:inputText id="telefonoFijo" value="#{TblUsuario.usuTelefonoFijo}" a:placeholder="Teléfono Fijo" styleClass="form-control form-control-sm"/>
+					<h:inputText id="password" value="#{TblUsuario.usuPassword}" a:placeholder="Contraseña" styleClass="form-control form-control-sm" required="true" label="¡Ingresa tu contraseña!"/>
+					<div class="inputform">
+						<h:selectOneMenu>
+							<f:selectItem itemValue = "1" itemLabel = "Cliente"/>
+							<f:selectItem itemValue = "2" itemLabel = "Barbero"/>
+							<f:selectItem itemValue = "3" itemLabel = "Administrador"/>
+						</h:selectOneMenu>
+					</div>
+					<!-- Botones cancelar y Editar Usuario -->
+					<div>
+						<h:commandButton actionListener="#{TblUsuario.metodoCrearUsuario}" value="Editar" styleClass="btn"></h:commandButton>
+						<h:commandButton action="#{TblUsuario.metodoVuelveLanding}" value="Cancelar" styleClass="btn"></h:commandButton>
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<h:graphicImage value="../../../resources/css/img/Logo/Barbgend_logo.png"/>
+		<p class="text_right">© 2019 - GAES 3 ADSI 2021 - SENA CSF Regional Distrito Capital - Todos los derechos reservados.</p>
+	</footer>
+</h:body>
+</html>
